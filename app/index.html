@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>AB-test calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link href="styles/dropzone.css" rel="stylesheet">
+        <!-- endbuild -->
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                </ul>
+                <h1 class="text-muted">ab test calculator</h1>
+            </div>
+
+      <div class="row">
+
+        <div class="table-responsive">
+          <form role="form" method="post" id="tableForm" action="process.php">
+            <table class="table table-striped table-hover">
+                <thead>
+                  <th class="column0">Baseline</th>
+                  <th class="column1">Treatment</th>
+                  <th class="column2">Visitors</th>
+                  <th class="column3">Conversions</th>
+                  <th class="column4">Conversion Rate</th>
+                  <th class="column5">Z-score</th>
+                  <th class="column6">Confidence</th>
+                  <th class="column7">Improvment</th>
+                  <th class="column8" data-toggle="tooltip" title="Recommended sample size for 95% confidence">Sample size</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <button class="btn btn-lg btn-primary">Calculate</button>
+            <button class="btn btn-link" onCLick='saveAs(blob, "test_tesults_" + date + ".json");'>Save data</button>
+          </form>
+        </div>
+      </div>
+      <div class="row"><hr /></div>
+      <div class="row">
+        <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="mad">
+          <div class="fallback">
+            <input name="file" type="file" />
+          </div>
+        </form>
+      </div>
+
+            <div class="footer">
+                <p>♥ from S.</p>
+            </div>
+        </div>
+
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/FileSaver.js"></script>
+        <script src="scripts/dropzone.min.js"></script>
+        <script src="scripts/form.js"></script>
+        <script src="scripts/ajax.js"></script>
+        
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

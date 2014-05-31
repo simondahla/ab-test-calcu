@@ -1,3 +1,10 @@
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+test/bower_components
+
 # Compiled source #
 ###################
 *.com
@@ -35,10 +42,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-wp-config.php
-<<<<<<< HEAD
-github_post_recieve.php
 =======
-
-wp-config.php
->>>>>>> c0e2bb8e6536d83027c095a38cdaef6d951886fc

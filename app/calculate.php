@@ -1,24 +1,23 @@
 <?php
 
-$c = array(182, 35);
-$tA = array(180, 45);
-$tB = array(189, 28);
-$tC = array(188, 61);
+$decimals = 2;
 
-function cr($t)
-{
+if (!empty($_GET['decimals'])) {
+
+    $decimals = $_GET['decimals'];
+}
+
+function cr($t) {
     return $t[1]/$t[0];
 }
 
-function zscore($c, $t)
-{
+function zscore($c, $t) {
     $z = cr($t)-cr($c);
     $s = (cr($t)*(1-cr($t)))/$t[0] + (cr($c)*(1-cr($c)))/$c[0];
     return $z/sqrt($s);
 }
 
-function cumnormdist($x)
-{
+function cumnormdist($x) {
   $b1 =  0.319381530;
   $b2 = -0.356563782;
   $b3 =  1.781477937;
@@ -39,19 +38,14 @@ function cumnormdist($x)
     }
 }
 
-function ssize($conv)
-{
+function ssize($conv) {
     $a = 3.84145882689;
     $res = array();
-    $bs = array(0.0625, 0.0225, 0.0025);
+    $bs = array(0.0625, 0.0225, 0.0025, 0.05);
     foreach ($bs as $b) {
         $res[] = (int) ((1-$conv)*$a/($b*$conv));
     }
     return $res;
 }
 
-
-print zscore($c, $tA).' - '.cumnormdist(zscore($c, $tA))."\n";
-print zscore($c, $tB).' - '.cumnormdist(zscore($c, $tB))."\n";
-print zscore($c, $tC).' - '.cumnormdist(zscore($c, $tC))."\n";
-print '1.645 - '.cumnormdist(1.645)."\n"; 
+?>

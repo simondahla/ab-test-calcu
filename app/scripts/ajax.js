@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
 	$('#tableForm').submit(function(event) {
     postData(this);
 	});
@@ -14,13 +14,13 @@ function postData(selector){
 
 function ajaxPost(postData){
   $.ajax({
-    type    : 'POST',
-    url     : 'process.php',
-    data    : postData,
+    type    	: 'POST',
+    url     	: 'process.php',
+    data    	: postData,
     dataType  : 'json',
-    encode          : true
+    encode    : true
   })
-    
+
     .done(function(data) {
 
       if ( ! data.success) {
@@ -30,10 +30,10 @@ function ajaxPost(postData){
 
       } else {
 
-        
+
         //$('.container').prepend('<div class="alert alert-success fade in">' + data.message + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
         updateRows(data);
-        
+
       }
     })
 

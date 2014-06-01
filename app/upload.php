@@ -1,5 +1,5 @@
 <?php
-$ds          = DIRECTORY_SEPARATOR;  //1
+$ds          = DIRECTORY_SEPARATOR;
  
 $storeFolder = 'uploads';   //2
  

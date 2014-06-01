@@ -1,6 +1,6 @@
 <?php
 
-include 'calculate.php';
+include 'inc/calculate.php';
 
 $errors         = array();  	// array to hold validation errors
 $data 			= array(); 		// array to pass back data
@@ -34,7 +34,7 @@ if ( ! empty($errors)) {
 	//if there are no errors process our form, then return a message
 
 	if(isset($_POST['treatment']) || isset($_POST['visitors']) || isset($_POST['conversions']) || isset($_POST['baseline'])){
-		
+
 		$treatment = $_POST['treatment'];
 		$visitors = $_POST['visitors'];
 		$conversions = $_POST['conversions'];
@@ -47,9 +47,9 @@ if ( ! empty($errors)) {
 				array_push($baseline, true);
 			} else {
 				array_push($baseline, false);
-				
+
 			}
-	    	
+
 		}
 		/* Set variables for calculations */
 		$input = array(
@@ -62,11 +62,11 @@ if ( ! empty($errors)) {
 		for ($i = 0; $i < count($input); ++$i) {
 
 			if($input['Baseline'][$i] === true){
-				
-				$control = array($input['Visitors'][$i],$input['Conversions'][$i]);		
-				
+
+				$control = array($input['Visitors'][$i],$input['Conversions'][$i]);
+
 			}
-			
+
 		}
 
 		/* Do calculations */
@@ -77,14 +77,14 @@ if ( ! empty($errors)) {
 		$samplesize = array();
 
 		for ($i = 0; $i < count($input); ++$i) {
-			
+
 			$array = array($input['Visitors'][$i],$input['Conversions'][$i]);
 			$ssize = ssize(cr($array));
 
 			//ConversionRate
 			$cr = round(cr($array) * 100, $decimals);
 			array_push($conversionrate, $cr);
-			
+
 			//Z-Score
 			if($input['Baseline'][$i] === false){
 				$zs = round(zscore($control, $array), $decimals);
@@ -124,9 +124,9 @@ if ( ! empty($errors)) {
 			'ConversionRate' => $conversionrate,
 			'Zscore' => $zscore,
 			'Confidence' => $confidence,
-			'Improvment' => $improvment,
+			'Improvement' => $improvment,
 			'SampleSize' => $samplesize,
-			
+
 		);
 
 	}

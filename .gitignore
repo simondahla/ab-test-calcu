@@ -43,3 +43,8 @@ test/bower_components
 ehthumbs.db
 Thumbs.db
 =======
+
+node_modules
+dist
+.tmp
+app/bower_components

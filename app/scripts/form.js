@@ -1,15 +1,15 @@
 function createRows(data){
-  for (var i = 0; i < data.Visitors.length; i++) {
+  for (var i = 0; i < data.length; i++) {
 
-    var bs = data.Baseline[i];
-    var tr = data.Treatment[i];
-    var vi = data.Visitors[i];
-    var co = data.Conversions[i];
-    var cr = data.ConversionRate[i];
-    var zs = data.Zscore[i];
-    var cf = data.Confidence[i];
-    var im = data.Improvement[i];
-    var ss = data.SampleSize[i];
+    var bs = data[i].Baseline;
+    var tr = data[i].Treatment;
+    var vi = data[i].Visitors;
+    var co = data[i].Conversions;
+    var cr = data[i].ConversionRate;
+    var zs = data[i].Zscore;
+    var cf = data[i].Confidence;
+    var im = data[i].Improvement;
+    var ss = data[i].SampleSize;
 
     $('tbody').append('<tr class="row' + i + '"></tr>');
 
@@ -26,53 +26,37 @@ function createRows(data){
 }
 
 function updateData(data){
-    delete data.success;
-    delete data.message;
+    x = [];
+
+    x.push(data);
+
     window.data = JSON.stringify(data);
 
-
-    createJsonString(data);
-
-    updateDownloadLink(eData);
-
-    // console.log('%cdata updated :%c' + window.data,'color: blue;', 'color: green;');
-    console.log('%c'+ window.eData,'color: blue;');
-
+    console.info('%cdata updated :%c' + window.data,'color: blue;', 'color: green;');
 }
-
-
-// function createBlob(data){
-//
-//   delete data.success;
-//   delete data.message;
-//
-//   data = JSON.stringify(data);
-//
-//   window.date = date.toISOString();
-//   window.blob = new Blob([data], {type: "text/plain;charset=utf-8"});
-//
-// }
 
 function updateRows(data){
 
-    function updateBaseline(selector, i, v){
-      if (v === true){
-        $(selector).prop('checked', true);
-      } else {
-        $(selector).removeAttr('checked');
-      }
+  function updateBaseline(selector, i, v){
+    if (v === true){
+      $(selector).prop('checked', true);
+    } else {
+      $(selector).removeAttr('checked');
+    }
   }
-  for (var i = 0; i < data.Visitors.length; i++) {
 
-    var bs = data.Baseline[i];
-    var tr = data.Treatment[i];
-    var vi = data.Visitors[i];
-    var co = data.Conversions[i];
-    var cr = data.ConversionRate[i];
-    var zs = data.Zscore[i];
-    var cf = data.Confidence[i];
-    var im = data.Improvement[i];
-    var ss = data.SampleSize[i];
+  for (var i = 0; i < data.length; i++) {
+
+    var bs = data[i].Baseline;
+    console.log(bs);
+    var tr = data[i].Treatment;
+    var vi = data[i].Visitors;
+    var co = data[i].Conversions;
+    var cr = data[i].ConversionRate;
+    var zs = data[i].Zscore;
+    var cf = data[i].Confidence;
+    var im = data[i].Improvement;
+    var ss = data[i].SampleSize;
 
     $('tbody > tr:eq(' + i + ') > td:eq(0) > input').val(i);
 
@@ -88,12 +72,16 @@ function updateRows(data){
     updateBaseline('tbody > tr:eq(' + i + ') > td:eq(0) > input', i, bs);
 
   }
+
   updateData(data);
+
 }
 
 
 
 function isBaseline(data) {
+  // console.log(data[0]);
+  // console.log(data.Baseline);
   if (data === true){
     return 'checked';
   } else {

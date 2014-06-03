@@ -9,7 +9,7 @@
     <title>AB-test calculator</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    
+
     <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <link rel="stylesheet" href="styles/main.css">
@@ -36,40 +36,146 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                </ul>
-                <h1 class="text-muted">ab test calculator</h1>
-            </div>
-
+<svg id="svg-source" height="0" version="1.1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute">
+            <g id="graph" data-iconmelon="Brainy Icons:5b60c5edd8d98ebded0f9851242b3943">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.989,22.957c1.288-1.731,2.582-3.458,3.876-5.186
+  c0.116-0.154,0.229-0.312,0.358-0.455c0.062-0.067,0.154-0.106,0.233-0.158c0.032,0.078,0.09,0.154,0.095,0.234
+  c0.02,0.353,0.008,0.709,0.041,1.061c0.016,0.166,0.153,0.279,0.321,0.32c0.16,0.039,0.396-0.141,0.418-0.324
+  c0.021-0.159,0.024-0.32,0.027-0.481c0.007-0.354,0.003-0.709,0.013-1.063c0.002-0.047,0.056-0.131,0.086-0.131
+  c0.057-0.001,0.125,0.035,0.166,0.078c0.088,0.093,0.169,0.194,0.24,0.302c0.949,1.442,2.324,2.278,3.938,2.788
+  c1.362,0.432,2.774,0.543,4.182,0.694c0.493,0.054,0.952-0.272,1.012-0.687c0.053-0.369-0.286-0.793-0.723-0.902
+  c-0.03-0.008-0.063-0.01-0.096-0.014c-0.574-0.068-1.148-0.139-1.723-0.205c-1.46-0.169-2.831-0.578-4.049-1.438
+  c-0.378-0.267-0.68-0.586-0.922-0.975c-0.579-0.929-1.16-1.856-1.744-2.782c-0.259-0.411-0.466-0.843-0.598-1.312
+  c-0.251-0.897-0.537-1.787-0.757-2.692c-0.214-0.876-0.742-1.579-1.255-2.264c-0.436-0.583-1.053-1.038-1.621-1.512
+  c-0.483-0.401-1.054-0.578-1.703-0.554c-0.682,0.025-1.352,0.119-2.002,0.285c-1.053,0.271-1.937,0.822-2.6,1.729
+  c-0.422,0.576-0.756,1.197-1.115,1.807c-0.556,0.942-1.126,1.877-1.48,2.924c-0.123,0.364-0.293,0.719-0.49,1.049
+  C8.817,13.595,8.6,14.126,8.394,14.67c-0.538,1.426-1.239,2.758-2.288,3.889c-0.358,0.387-0.748,0.715-1.25,0.878
+  c-0.581,0.188-1.17,0.35-1.757,0.519c-0.11,0.032-0.258-0.088-0.266-0.214c-0.017-0.225-0.024-0.45-0.033-0.675
+  c-0.019-0.483-0.006-0.97-0.057-1.449c-0.211-1.956-0.183-3.924-0.292-5.884c-0.03-0.547-0.005-1.096-0.005-1.645H2.401
+  c0-0.935,0-1.869,0-2.804C2.4,6.989,2.397,6.99,2.785,6.986c0.425-0.005,0.672-0.271,0.618-0.67
+  C3.392,6.221,3.387,6.115,3.342,6.035c-0.38-0.679-0.381-1.419-0.38-2.163c0-0.127-0.016-0.257-0.047-0.38
+  C2.851,3.23,2.517,3.088,2.297,3.244C2.116,3.372,1.931,3.52,1.81,3.699C1.304,4.444,0.815,5.203,0.331,5.965
+  c-0.119,0.188-0.21,0.398-0.293,0.607C-0.081,6.877,0.094,7.244,0.41,7.354c0.118,0.041,0.253,0.037,0.38,0.049
+  c0.15,0.013,0.229,0.102,0.237,0.243c0.01,0.193,0.005,0.387,0.007,0.58c0.014,1.837,0.026,3.675,0.043,5.512
+  c0.003,0.322,0.018,0.645,0.037,0.966c0.091,1.543,0.178,3.086,0.283,4.627c0.034,0.488,0.003,0.901-0.6,0.987
+  c-0.029,0.004-0.058,0.028-0.084,0.047c-0.26,0.18-0.381,0.439-0.369,0.744c0.012,0.303,0.247,0.43,0.496,0.526
+  c0.061,0.023,0.122,0.05,0.185,0.056c0.277,0.028,0.379,0.187,0.382,0.454c0.01,0.806,0.04,1.611,0.041,2.418
+  c0,0.443,0.095,0.903-0.171,1.319c-0.042,0.066-0.035,0.202,0.005,0.275c0.318,0.587,0.133,1.197,0.097,1.8
+  c-0.008,0.127-0.058,0.252-0.062,0.378c-0.004,0.18,0.227,0.428,0.431,0.475c0.175,0.04,0.328-0.035,0.424-0.167
+  c0.149-0.207,0.308-0.423,0.394-0.66c0.108-0.302,0.254-0.392,0.575-0.323c0.19,0.041,0.394-0.161,0.416-0.333
+  c0.03-0.223,0.036-0.448,0.049-0.673c0.011-0.189,0.114-0.298,0.294-0.318c0.351-0.04,0.701-0.077,1.053-0.091
+  c0.06-0.002,0.169,0.115,0.178,0.186c0.027,0.223,0.004,0.451,0.025,0.674c0.019,0.189,0.059,0.38,0.116,0.561
+  c0.063,0.199,0.241,0.288,0.459,0.266c0.211-0.021,0.348-0.161,0.362-0.38c0.006-0.097-0.01-0.195,0.005-0.29
+  c0.055-0.337-0.146-0.697,0.096-1.017c0.35-0.02,0.7-0.04,1.05-0.057c0.063-0.004,0.13,0.001,0.192,0.014
+  c0.136,0.028,0.231,0.105,0.23,0.255c-0.001,0.289-0.026,0.581-0.008,0.869c0.01,0.152,0.07,0.312,0.147,0.446
+  c0.099,0.17,0.253,0.298,0.471,0.283c0.187-0.012,0.344-0.241,0.352-0.508c0.007-0.226-0.008-0.452,0.007-0.677
+  c0.01-0.159,0.024-0.328,0.087-0.471c0.045-0.102,0.172-0.238,0.263-0.239c0.644-0.012,1.287,0.003,1.931,0.026
+  c0.066,0.002,0.17,0.108,0.183,0.18c0.028,0.156,0.005,0.321,0.013,0.482c0.008,0.16,0.014,0.322,0.043,0.479
+  c0.049,0.261,0.291,0.441,0.561,0.435c0.215-0.006,0.361-0.186,0.371-0.474c0.012-0.29,0.004-0.58,0.015-0.87
+  c0.006-0.147,0.104-0.234,0.246-0.243c0.224-0.015,0.45-0.019,0.675-0.015c0.264,0.005,0.357,0.09,0.378,0.331
+  c0.019,0.225,0.022,0.45,0.043,0.675c0.027,0.296,0.14,0.562,0.326,0.791c0.109,0.134,0.267,0.175,0.437,0.136
+  c0.184-0.041,0.367-0.238,0.361-0.403c-0.006-0.126-0.039-0.251-0.057-0.377c-0.037-0.253-0.086-0.507-0.105-0.761
+  c-0.02-0.258,0.083-0.377,0.312-0.382c0.322-0.007,0.645-0.004,0.966,0.004c0.19,0.006,0.28,0.107,0.281,0.308
+  c0.003,0.483-0.001,0.967,0.003,1.45c0.001,0.235,0.078,0.438,0.262,0.6c0.204,0.182,0.57,0.099,0.623-0.162
+  c0.039-0.185,0.045-0.38,0.042-0.57c-0.006-0.511-0.024-1.022-0.038-1.533c0.525-0.211,1.078-0.062,1.615-0.113
+  c0.191-0.019,0.387-0.007,0.58,0c0.267,0.01,0.343,0.087,0.352,0.341c0.011,0.354-0.001,0.711,0.043,1.061
+  c0.022,0.18,0.125,0.36,0.229,0.516c0.09,0.136,0.251,0.215,0.421,0.162c0.158-0.05,0.295-0.162,0.313-0.335
+  c0.023-0.223,0.016-0.449,0.013-0.674c-0.021-1.217-0.133-1.073,1.071-1.065c0.312,0.001,0.688-0.135,0.92,0.116
+  c0.154,0.165,0.146,0.475,0.224,0.716c0.069,0.214,0.149,0.425,0.237,0.631c0.037,0.086,0.103,0.162,0.166,0.231
+  c0.112,0.122,0.395,0.165,0.534,0.045c0.11-0.095,0.19-0.245,0.241-0.387c0.027-0.075-0.045-0.182-0.058-0.276
+  c-0.041-0.317-0.366-0.648-0.193-0.914c0.213-0.328,0.657-0.104,0.996-0.15c0.096-0.013,0.194-0.004,0.29,0.002
+  c0.286,0.019,0.618-0.044,0.845,0.083c0.276,0.154,0.096,0.531,0.153,0.804c0.046,0.22,0.069,0.45,0.156,0.652
+  c0.072,0.17,0.207,0.322,0.342,0.453c0.187,0.184,0.566,0.055,0.611-0.203c0.027-0.156,0.038-0.32,0.023-0.479
+  c-0.033-0.352-0.097-0.701-0.125-1.054c-0.006-0.071,0.076-0.208,0.135-0.218c0.639-0.11,1.281-0.116,1.924-0.041
+  c0.041,0.005,0.105,0.154,0.09,0.221c-0.058,0.249-0.146,0.491-0.219,0.738c-0.069,0.229-0.043,0.447,0.107,0.64
+  c0.099,0.127,0.198,0.255,0.309,0.371c0.174,0.182,0.435,0.165,0.579-0.051c0.487-0.723,1.015-1.41,1.634-2.028
+  c0.153-0.154,0.27-0.362,0.358-0.565c0.111-0.253,0.062-0.508-0.132-0.717c-0.088-0.094-0.186-0.18-0.286-0.258
+  c-0.485-0.373-0.965-0.752-1.462-1.108c-0.233-0.166-0.493-0.301-0.756-0.418c-0.246-0.109-0.504-0.011-0.676,0.223
+  c-0.152,0.205-0.145,0.418-0.004,0.627c0.035,0.053,0.088,0.096,0.123,0.148s0.059,0.112,0.088,0.169
+  c-0.056,0.025-0.112,0.075-0.167,0.071c-0.288-0.016-0.584-0.013-0.862-0.075c-0.449-0.104-0.902-0.118-1.346-0.05
+  c-0.801,0.124-1.605,0.096-2.408,0.142c-0.488,0.027-0.898-0.008-1.037-0.576c-0.006-0.026-0.045-0.043-0.066-0.067
+  c-0.102-0.116-0.335-0.101-0.419,0.039c-0.081,0.138-0.157,0.281-0.21,0.431c-0.076,0.214-0.236,0.291-0.439,0.314
+  c-0.097,0.011-0.193,0.018-0.29,0.014c-0.671-0.021-1.342,0.127-2.013,0.002c-0.02-0.004-0.051-0.057-0.045-0.064
+  c0.369-0.525,0.739-1.051,1.115-1.573c0.263-0.366,0.529-0.729,0.801-1.091c0.252-0.335,0.254-0.332,0.588,0.023
+  c0.064,0.069,0.137,0.135,0.215,0.189c0.151,0.105,0.42,0.05,0.504-0.127c0.065-0.138,0.119-0.306,0.102-0.452
+  c-0.02-0.188-0.084-0.386-0.186-0.544c-0.259-0.406-0.112-0.719,0.163-1.037c0.188-0.22,0.347-0.465,0.511-0.704
+  c0.053-0.077,0.107-0.172,0.111-0.26c0.004-0.084-0.045-0.181-0.1-0.25c-0.027-0.034-0.123-0.044-0.176-0.026
+  c-0.456,0.145-0.739,0.499-1.014,0.86c-1.147,1.515-2.317,3.015-3.427,4.558c-0.378,0.525-0.771,0.818-1.43,0.727
+  c-0.347-0.048-0.702-0.036-1.053-0.051c-0.027-0.382,0.329-0.571,0.447-0.888C16.636,23.429,16.817,23.188,16.989,22.957z
+   M15.784,22.997c-0.18,0.227-0.345,0.467-0.5,0.711c-0.085,0.134-0.147,0.286-0.195,0.438c-0.043,0.139,0.164,0.326-0.037,0.426
+  c-0.134,0.065-0.31,0.062-0.467,0.062c-1.256,0.005-2.514,0.003-3.77,0.003v0.019c-0.967,0-1.934-0.003-2.899,0.002
+  c-0.675,0.003-1.343,0.039-2.017,0.136c-0.889,0.126-1.797,0.116-2.697,0.158c-0.16,0.008-0.326-0.153-0.323-0.296
+  c0.017-0.837,0.036-1.673,0.06-2.51c0.008-0.296,0.088-0.387,0.412-0.401c1.143-0.049,2.088-0.614,3.029-1.165
+  c0.295-0.172,0.552-0.454,0.748-0.741c0.724-1.062,1.473-2.11,2.025-3.281c0.11-0.233,0.113-0.534,0.38-0.682
+  c0.017,0.252,0.034,0.504,0.054,0.756c0.008,0.096-0.006,0.22,0.049,0.277c0.102,0.112,0.235,0.228,0.375,0.261
+  c0.09,0.021,0.25-0.074,0.315-0.164c0.089-0.124,0.151-0.288,0.166-0.44c0.069-0.704,0.12-1.41,0.167-2.116
+  c0.008-0.124-0.007-0.271-0.069-0.372c-0.203-0.327-0.078-0.604,0.076-0.896c0.513-0.966,1.005-1.943,1.531-2.902
+  c0.484-0.886,1.132-1.64,1.96-2.227c0.02-0.014,0.062-0.009,0.088,0.003c0.022,0.011,0.053,0.054,0.048,0.063
+  c-0.05,0.082-0.106,0.161-0.163,0.239c-0.809,1.126-1.539,2.301-2.168,3.537c-0.117,0.229-0.233,0.461-0.324,0.701
+  c-0.066,0.178-0.105,0.369-0.13,0.558c-0.021,0.165,0.03,0.319,0.202,0.397c0.133,0.061,0.33,0.003,0.418-0.146
+  c0.146-0.25,0.283-0.505,0.41-0.764c0.857-1.737,1.885-3.37,2.988-4.959c0.15-0.215,0.316-0.283,0.555-0.308
+  c0.515-0.054,0.949,0.095,1.321,0.452c0.279,0.267,0.566,0.526,0.854,0.784c0.445,0.396,0.689,0.934,0.946,1.446
+  c0.476,0.947,0.886,1.929,1.331,2.892c0.125,0.271,0.085,0.483-0.129,0.693c-1.107,1.091-1.951,2.394-2.875,3.631
+  c-1.176,1.572-2.329,3.162-3.49,4.746c-0.172,0.233-0.355,0.461-0.5,0.71c-0.076,0.132-0.101,0.304-0.108,0.46
+  c-0.009,0.168,0.081,0.309,0.233,0.394c0.152,0.086,0.315,0.089,0.456-0.013c0.528-0.381,1.016-0.814,1.22-1.453
+  c0.101-0.314,0.239-0.59,0.421-0.857c1.211-1.785,2.416-3.573,3.628-5.357c0.398-0.586,0.809-1.163,1.221-1.74
+  c0.273-0.385,0.373-0.384,0.604-0.016c0.085,0.137,0.15,0.286,0.241,0.418c0.366,0.532,0.211,1.054-0.107,1.505
+  c-0.426,0.604-0.932,1.15-1.396,1.728C18.561,19.528,17.171,21.262,15.784,22.997z M13.927,19.278
+  c1.01-1.685,2.034-3.36,3.025-5.056c0.585-1,1.127-2.025,1.668-3.051c0.146-0.277,0.219-0.595,0.316-0.87
+  c-0.063-0.134-0.082-0.245-0.148-0.294c-0.123-0.094-0.251-0.006-0.329,0.086c-0.188,0.218-0.378,0.439-0.525,0.684
+  c-0.579,0.967-1.146,1.941-1.71,2.917c-1.273,2.203-2.616,4.363-3.993,6.503c-0.243,0.378-0.448,0.781-0.652,1.182
+  c-0.094,0.185,0.006,0.402,0.224,0.586c0.161,0.137,0.354,0.141,0.526-0.002c0.612-0.504,1.063-1.131,1.265-1.896
+  C13.669,19.778,13.779,19.525,13.927,19.278z M12.595,16.874c0.054-0.027,0.162-0.051,0.217-0.118
+  c0.143-0.173,0.276-0.357,0.385-0.553c0.984-1.766,1.966-3.533,2.939-5.305c0.434-0.786,0.849-1.582,1.262-2.379
+  c0.034-0.064,0.021-0.195-0.025-0.249c-0.053-0.062-0.164-0.091-0.253-0.098c-0.211-0.018-0.374,0.094-0.488,0.257
+  c-0.182,0.264-0.357,0.533-0.519,0.811c-0.389,0.665-0.768,1.336-1.15,2.004c-0.83,1.448-1.664,2.894-2.488,4.346
+  c-0.141,0.249-0.26,0.515-0.355,0.784C12.034,16.611,12.315,16.912,12.595,16.874z M10.169,22.021
+  c-0.037,0.051-0.084,0.102-0.103,0.159c-0.138,0.423-0.284,0.848-0.248,1.298c0.014,0.181,0.085,0.366,0.173,0.526
+  c0.079,0.143,0.244,0.217,0.41,0.174c0.158-0.041,0.294-0.151,0.32-0.319c0.039-0.25,0.047-0.505,0.082-0.932
+  c-0.03-0.175-0.073-0.518-0.151-0.853C10.612,21.903,10.276,21.877,10.169,22.021z M10.356,20.221
+  c0.07-0.103,0.131-0.226,0.148-0.346c0.043-0.284,0.058-0.572,0.089-0.915c-0.01-0.136-0.015-0.327-0.038-0.517
+  c-0.017-0.146-0.242-0.261-0.375-0.177c-0.13,0.081-0.304,0.182-0.339,0.307c-0.118,0.428-0.188,0.87-0.269,1.308
+  c-0.012,0.059,0.009,0.127,0.026,0.188c0.05,0.167,0.165,0.271,0.334,0.305C10.102,20.406,10.259,20.363,10.356,20.221z"></path>
+            </g>
+          </svg>
+    <div class="container">
       <div class="row">
-
-        <div class="table-responsive">
-          <form role="form" method="post" id="tableForm" action="process.php">
-            <table class="table table-striped table-hover">
-                <thead>
-                  <th class="column0">Baseline</th>
-                  <th class="column1">Treatment</th>
-                  <th class="column2">Visitors</th>
-                  <th class="column3">Conversions</th>
-                  <th class="column4">Conversion Rate</th>
-                  <th class="column5">Z-score</th>
-                  <th class="column6">Confidence</th>
-                  <th class="column7">Improvment</th>
-                  <th class="column8" data-toggle="tooltip" title="Recommended sample size for 95% confidence">Sample size</th>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-            <button class="btn btn-lg btn-primary">Calculate</button>
-            <a class="btn btn-link" href="#" onClick="downloadFile();" id="saveFile">Save data</a>
-          </form>
+        <div class="col-lg-12">
+          <div class="header">
+            <div class="brand pull-left"><svg viewBox="0 0 32 32"><g filter=""><use xlink:href="#graph"></use></g></svg></div><h1 class="text-muted pull-left unicorn">ab test calculator</h1>
+          </div>
         </div>
       </div>
-      <!-- <div class="row"><hr /></div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <form role="form" method="post" id="tableForm" action="process.php">
+              <table class="table table-striped table-hover">
+                  <thead>
+                    <th class="column0">Baseline</th>
+                    <th class="column1">Treatment</th>
+                    <th class="column2">Visitors</th>
+                    <th class="column3">Conversions</th>
+                    <th class="column4">Conversion Rate</th>
+                    <th class="column5">Z-score</th>
+                    <th class="column6">Confidence</th>
+                    <th class="column7">Improvment</th>
+                    <th class="column8" data-toggle="tooltip" title="Recommended sample size for 95% confidence">Sample size</th>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+              </table>
+              <div class="col-lg-6"><button class="btn btn-lg btn-primary">Calculate</button></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row"><hr /></div><!--
       <div class="row">
         <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="mad">
           <div class="fallback">
@@ -77,36 +183,71 @@
           </div>
         </form>
       </div> -->
-
-            <div class="footer">
-                <p>from SD with ♥</p>
+    <div class="row save-row">
+      <div class="col-lg-12"><h2><i class="fa fa-database"></i> Local Storage</h2></div>
+        <div class="col-lg-5">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label" for="fileName">File Name</label>
+              <input type="text" class="form-control input-lg" id="fileName" placeholder="My Awesome A/B-test">
             </div>
+            <button class="btn btn-success btn-lg" onClick="localSave(data);"><i class="fa fa-floppy-o"></i> Save entry</button>
+            <a class="btn btn-link" onClick="downloadFile(data,'test_results');"><i class="fa fa-download"></i> Export this entry</a>
+            
+          </div>
         </div>
-
-        <!-- build:js scripts/main.js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="scripts/FileSaver.js"></script>
-        <script src="scripts/dropzone.min.js"></script>
-        <script src="scripts/jquery.parse.min.js"></script>
-        <script src="scripts/form.js"></script>
-        <script src="scripts/ajax.js"></script>
-        <script src="scripts/main.js"></script>
+      <div class="col-lg-6 col-lg-offset-1">
+        <div class="form-horizontal">
+          <div class="form-group save-wrapper">
+            <label class="control-label" for="saveList">Entries in Local Storage</label>
+            
+            
+          </div>
+          <button class="btn btn-danger" onClick="removeButton('select#saveList');"><i class="fa fa-trash-o"></i> Remove entry</button> <a class="btn btn-link" onClick="downloadFile(dataExport,'all_test_results_exported');"><i class="fa fa-download"></i> Export all entries</a>
+        </div>
         
-        <!-- endbuild -->
+      </div>
+    </div>
 
-        <!-- build:js scripts/vendor/bootstrap.js -->
-        <script src="bower_components/bootstrap/js/affix.js"></script>
-        <script src="bower_components/bootstrap/js/alert.js"></script>
-        <script src="bower_components/bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/bootstrap/js/modal.js"></script>
-        <script src="bower_components/bootstrap/js/transition.js"></script>
-        <script src="bower_components/bootstrap/js/button.js"></script>
-        <script src="bower_components/bootstrap/js/popover.js"></script>
-        <script src="bower_components/bootstrap/js/carousel.js"></script>
-        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/bootstrap/js/collapse.js"></script>
-        <script src="bower_components/bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="footer text-muted">
+            <hr />
+            <p>Made in Stockholm with ♥</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- build:js scripts/main.js -->
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="scripts/FileSaver.js"></script>
+  <script src="scripts/dropzone.min.js"></script>
+  <script src="scripts/jquery.parse.min.js"></script>
+  <script src="scripts/form.js"></script>
+  <script src="scripts/ajax.js"></script>
+  <script src="scripts/localStorage.js"></script>
+  <script src="scripts/unicorn.js"></script>
+
+  <script src="scripts/main.js"></script>
+
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/bootstrap.js -->
+  <script src="bower_components/bootstrap/js/affix.js"></script>
+  <script src="bower_components/bootstrap/js/alert.js"></script>
+  <script src="bower_components/bootstrap/js/dropdown.js"></script>
+  <script src="bower_components/bootstrap/js/tooltip.js"></script>
+  <script src="bower_components/bootstrap/js/modal.js"></script>
+  <script src="bower_components/bootstrap/js/transition.js"></script>
+  <script src="bower_components/bootstrap/js/button.js"></script>
+  <script src="bower_components/bootstrap/js/popover.js"></script>
+  <script src="bower_components/bootstrap/js/carousel.js"></script>
+  <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+  <script src="bower_components/bootstrap/js/collapse.js"></script>
+  <script src="bower_components/bootstrap/js/tab.js"></script>
+  <!-- endbuild -->
 </body>
 </html>

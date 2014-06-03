@@ -74,60 +74,76 @@ if ( ! empty($errors)) {
 		$zscore = array();
 		$confidence = array();
 		$improvment = array();
-		$samplesize = array();
+		$samplesize = array();	
 
 		for ($i = 0; $i < count($input); ++$i) {
+			$x = array();
+
+			$x['Baseline'] 		= $input['Baseline'][$i];
+			$x['Treatment'] 	= $input['Treatment'][$i];
+			$x['Visitors'] 		= $input['Visitors'][$i];
+			$x['Conversions'] 	= $input['Conversions'][$i];
+
 
 			$array = array($input['Visitors'][$i],$input['Conversions'][$i]);
 			$ssize = ssize(cr($array));
 
 			//ConversionRate
 			$cr = round(cr($array) * 100, $decimals);
-			array_push($conversionrate, $cr);
+			// array_push($conversionrate, $cr);
+			$x['ConversionRate']=$cr;
 
 			//Z-Score
 			if($input['Baseline'][$i] === false){
 				$zs = round(zscore($control, $array), $decimals);
-				array_push($zscore, $zs);
+				// array_push($zscore, $zs);
+				$x['Zscore'] = $zs;
 			} else {
-				array_push($zscore, '-');
+				// array_push($zscore, '-');
+				$x['Zscore'] = '-';
 			}
 
 			//Confidence
 			if($input['Baseline'][$i] === false){
-				$co = round(cumnormdist(zscore($control, $array)) * 100, $decimals);
-				array_push($confidence, $co);
+				$cf = round(cumnormdist(zscore($control, $array)) * 100, $decimals);
+				// array_push($confidence, $co);
+				$x['Confidence']=$cf;				
 			} else {
-				array_push($confidence, '-');
+				// array_push($confidence, '-');
+				$x['Confidence'] = '-';	
 			}
 
 			//Improvment
 			if($input['Baseline'][$i] === false){
 				$im = round((cr($array)/cr($control)-1)*100 ,$decimals);
-				array_push($improvment, $im);
+				// array_push($improvment, $im);
+				$x['Improvement']=$im;
 			} else {
-				array_push($improvment, '-');
+				// array_push($improvment, '-');
+				$x['Improvement']='-';
 			}
 
 			//SampleSize
 			$ss = $ssize[3];
-			array_push($samplesize, $ss);
+			// array_push($samplesize, $ss);
+			$x['SampleSize']=$ss;
+
+			array_push($data, $x);
 
 		}
 
 		/* Put everyhing in a nice array to send back*/
-		$data = array(
-			'Treatment' => $treatment,
-			'Baseline' => $baseline,
-			'Visitors' => $visitors,
-			'Conversions' => $conversions,
-			'ConversionRate' => $conversionrate,
-			'Zscore' => $zscore,
-			'Confidence' => $confidence,
-			'Improvement' => $improvment,
-			'SampleSize' => $samplesize,
-
-		);
+		// $data = array(
+		// 	'Treatment' => $treatment,
+		// 	'Baseline' => $baseline,
+		// 	'Visitors' => $visitors,
+		// 	'Conversions' => $conversions,
+		// 	'ConversionRate' => $conversionrate,
+		// 	'Zscore' => $zscore,
+		// 	'Confidence' => $confidence,
+		// 	'Improvement' => $improvment,
+		// 	'SampleSize' => $samplesize,
+		// );
 
 	}
 
